@@ -10,6 +10,9 @@ from selenium.webdriver.support import ui, expected_conditions
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
+from pageObject.checkoutpage import CheckoutPage
+from pageObject.confirmpage import Proceed
+from pageObject.homepage import HomePage
 from utilities.baseclass import BaseClass
 
 
@@ -19,8 +22,9 @@ class TestOne(BaseClass):
 
         expected_list = ["Cucumber - 1 Kg", "Raspberry - 1/4 Kg", "Strawberry - 1/4 Kg"]
         actual_list = []
-
-        self.driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
+        homePage = HomePage(self.driver)
+        homePage.shopItems().send_keys("ber")
+        # self.driver.find_element(By.CSS_SELECTOR, ".search-keyword").send_keys("ber")
         time.sleep(5)
 
         results = self.driver.find_elements(By.XPATH, "//div[@class='products']/div")
@@ -42,7 +46,9 @@ class TestOne(BaseClass):
         print("Click on cart is done")
 
         print("Proceed to checkout")
-        self.driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
+        checkout_items = CheckoutPage(self.driver)
+        checkout_items.checkoutItems().click()
+        # self.driver.find_element(By.XPATH, "//button[text()='PROCEED TO CHECKOUT']").click()
         print("Proceed to checkout Done")
 
         promo_code = "rahulshettyacademy"
@@ -50,10 +56,11 @@ class TestOne(BaseClass):
         wrong_promo_code = "ahulshettyacademy"
 
         print("Add Promo Code")
-
+        time.sleep(5)
         self.driver.find_element(By.XPATH, "//input[@class='promoCode']").send_keys(promo_code)
 
         print("Promo Code is Filled ... !")
+
         print("Now Click on Add button to avail the discount")
 
         self.driver.find_element(By.XPATH, "//button[@class='promoBtn']").click()
@@ -93,6 +100,35 @@ class TestOne(BaseClass):
             print("Discount Promo Code is applied !!!")
         else:
             print("Discounted Promo Code is Invalid and not Applied")
+
+        print("Click on Place Order button")
+        # time.sleep(5)
+        placeOrder_items = CheckoutPage(self.driver)
+        placeOrder_items.PlaceOrder().click()
+        # self.driver.find_element(By.XPATH, "//button[text()='Place Order']").click()
+        print("Place order button click done")
+        time.sleep(2)
+
+        print("Select the country from drop down field")
+        self.driver.find_element(By.XPATH, "//select[@style='width: 200px;']").click()
+        print("list of countries are")
+
+        print("Select the country name i.e INDIA")
+        self.driver.find_element(By.XPATH, "//option[@value='India']").click()
+        print("India is selected")
+        time.sleep(2)
+
+        print("Accept the terms and condition")
+        self.driver.find_element(By.CSS_SELECTOR, "input[type='checkbox']").click()
+        print("Terms and condition accepted")
+        time.sleep(2)
+
+        print("Click on proceed button")
+        final_proceed = Proceed(self.driver)
+        final_proceed.finalPage().click()
+        #self.driver.find_element(By.XPATH, "//button[text()='Proceed']").click()
+        print("Proceed button clicked")
+        time.sleep(2)
 
         print("---EOC---")
         time.sleep(5)

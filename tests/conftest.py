@@ -27,20 +27,20 @@ def setup(request):
     # Open the target URL
     driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
     print("---Browser is open---")
-    time.sleep(10)
+    time.sleep(2)
     # Maximize the browser window
     driver.maximize_window()
     print("---Window maximized---")
-    time.sleep(5)
+    time.sleep(2)
 
     # Print the title and URL of the current page
     print("---The Title of the page is---")
     print("The title is =", driver.title)
-    time.sleep(5)
+    time.sleep(2)
 
     print("---The URL of the page is---")
     print("The URL of the page is =", driver.current_url)
-    time.sleep(5)
+    time.sleep(2)
 
     # Assign the driver to the class that uses this fixture
     request.cls.driver = driver
