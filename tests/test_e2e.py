@@ -126,7 +126,7 @@ class TestOne(BaseClass):
         print("Click on proceed button")
         final_proceed = Proceed(self.driver)
         final_proceed.finalPage().click()
-        #self.driver.find_element(By.XPATH, "//button[text()='Proceed']").click()
+        # self.driver.find_element(By.XPATH, "//button[text()='Proceed']").click()
         print("Proceed button clicked")
         time.sleep(2)
 
