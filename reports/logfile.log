@@ -209,3 +209,22 @@
 2024-06-16 14:51:53,411 :INFO : utilities.baseclass : Click on cart is done
 2024-06-16 14:51:58,506 :INFO : utilities.baseclass : Proceed to checkout done
 2024-06-16 14:52:03,614 :INFO : utilities.baseclass : Promo code is filled
+2024-06-16 15:16:40,575 :INFO : utilities.baseclass : Starting end-to-end test
+2024-06-16 15:16:45,778 :INFO : utilities.baseclass : Getting all the card results
+2024-06-16 15:16:45,967 :INFO : utilities.baseclass : The actual and expected list are the same
+2024-06-16 15:16:45,967 :INFO : utilities.baseclass : All items are added to cart with 'ber' keyword items
+2024-06-16 15:16:46,005 :INFO : utilities.baseclass : Click on cart is done
+2024-06-16 15:16:51,114 :INFO : utilities.baseclass : Proceed to checkout done
+2024-06-16 15:16:56,240 :INFO : utilities.baseclass : Promo code is filled
+2024-06-16 15:16:58,306 :INFO : utilities.baseclass : Click on apply promo code button is done
+2024-06-16 15:17:03,960 :INFO : utilities.baseclass : Promo info: Code applied ..!
+2024-06-16 15:17:03,960 :INFO : utilities.baseclass : Promo code applied successfully
+2024-06-16 15:17:03,985 :INFO : utilities.baseclass : Sum of the item prices: 388
+2024-06-16 15:17:03,998 :INFO : utilities.baseclass : Final amount of the items: ₹388
+2024-06-16 15:17:04,014 :INFO : utilities.baseclass : Discounted price: 349.2
+2024-06-16 15:17:04,014 :INFO : utilities.baseclass : Discount promo code applied successfully
+2024-06-16 15:17:04,069 :INFO : utilities.baseclass : Place order button clicked
+2024-06-16 15:17:06,226 :INFO : utilities.baseclass : Selected country: India
+2024-06-16 15:17:08,338 :INFO : utilities.baseclass : Accepted terms and conditions
+2024-06-16 15:17:10,462 :INFO : utilities.baseclass : Proceed button clicked
+2024-06-16 15:17:12,529 :INFO : utilities.baseclass : --- End of Test ---
