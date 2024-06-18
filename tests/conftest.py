@@ -21,6 +21,10 @@ def setup(request):
         time.sleep(5)
     elif browser_name == "safari":
         driver = webdriver.Safari()
+        time.sleep(5)
+    elif browser_name == "FireFox":
+        driver = webdriver.Firefox()
+        time.sleep(5)
     else:
         raise ValueError(f"No Driver Available for the specified browser: {browser_name}")
 
@@ -29,7 +33,8 @@ def setup(request):
     print("---Browser is open---")
     time.sleep(2)
     # Maximize the browser window
-    driver.maximize_window()
+    #driver.maximize_window()
+    driver.set_window_size(1920, 1080)
     print("---Window maximized---")
     time.sleep(2)
 

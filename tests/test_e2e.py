@@ -88,16 +88,20 @@ class TestOne(BaseClass):
         place_order_items.PlaceOrder().click()
         log.info("Place order button clicked")
         time.sleep(2)
+        
         self.driver.find_element(By.XPATH, "//select[@style='width: 200px;']").click()
         self.driver.find_element(By.XPATH, "//option[@value='India']").click()
         log.info("Selected country: India")
         time.sleep(2)
+
         self.driver.find_element(By.CSS_SELECTOR, "input[type='checkbox']").click()
         log.info("Accepted terms and conditions")
         time.sleep(2)
+
         final_proceed = Proceed(self.driver)
         final_proceed.finalPage().click()
         log.info("Proceed button clicked")
         time.sleep(2)
+
         log.info("--- End of Test ---")
         time.sleep(5)  # For demonstration purposes only
